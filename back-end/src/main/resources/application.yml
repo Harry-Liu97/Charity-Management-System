@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/Hyrule
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 62308991
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

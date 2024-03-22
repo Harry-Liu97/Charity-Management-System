@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyrulecastle.mapper.RewardMapper">
+
+    <resultMap id="BaseResultMap" type="com.hyrulecastle.entity.Reward">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="point" property="point" />
+        <result column="store" property="store" />
+        <result column="image" property="image" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name, point, store, image
+    </sql>
+    <select id="myPagingQuery" resultType="com.hyrulecastle.entity.Reward">
+        select *
+        from reward ${ew.customSqlSegment}
+        order by point ASC, store DESC
+    </select>
+
+</mapper>

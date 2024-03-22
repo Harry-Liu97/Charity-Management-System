@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyrulecastle.mapper.PointMapper">
+
+    <resultMap id="BaseResultMap" type="com.hyrulecastle.entity.Point">
+        <id column="id" property="id" />
+        <result column="no" property="no" />
+        <result column="role" property="role" />
+        <result column="success" property="success" />
+        <result column="points" property="points" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, no, role, success, points
+    </sql>
+
+    <select id="rank" resultType="com.hyrulecastle.entity.Point">
+        select *
+        from point where role = 2
+        order by success DESC
+        LIMIT 10
+    </select>
+</mapper>
